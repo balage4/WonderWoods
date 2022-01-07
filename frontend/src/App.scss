@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Maitree&family=The+Nautigal&display=swap');
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+@mixin background {
+  background-image: url('./assets/woodbackground.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+body {
+  @include background();
+  font-family: 'Maitree', serif;
+  font-weight: bold;
+  font-size: 21px;
+}
+
+nav {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  position: absolute;
+  p {
+    position: relative;
+    left: 28px;
+    margin: 0;
+    padding: 0 0 0 20px;
+    font: italic bolder 55px 'The Nautigal';
+    transform: rotate(-4deg);
+    color: #5f4600;
+
+    text-shadow: 1px 1px 2px black, 0 0 16px purple;
+    transition: text-shadow 0.7s ease-out, transform 0.7s linear;
+    &:hover {
+      text-shadow: 0 0 22px #f6ffc1;
+      transform: rotate(-7deg);
+    }
+  }
+  ul {
+    position: relative;
+    right: 20px;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start;
+    list-style-type: none;
+    border-radius: 10px;
+
+    li {
+      padding: 0 14px;
+      color: #f5d393;
+      text-shadow: 1px 1px 2px black, 0 0 20px blue, 0 0 7px darkblue;
+      border-bottom: 0;
+      transition: text-shadow 0.5s ease-out, transform 0.2s linear;
+
+      &:first-child {
+        transform: rotate(-15deg);
+      }
+      &:nth-child(2) {
+        transform: rotate(5deg);
+      }
+      &:nth-child(3) {
+        transform: rotate(-10deg);
+      }
+      &:last-child {
+        transform: rotate(10deg);
+      }
+
+      &:hover {
+        text-shadow: 1px 1px 2px black, 0 0 20px #cdf53c, 0 0 7px #42dd7d;
+        transform: rotate(0);
+      }
+
+      a {
+        text-decoration: none;
+        color: #f5d393;
+        &:hover {
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+.grid-container {
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  & > * {
+    border: 2px solid #977a3c;
+    border-radius: 10px;
+    margin: 4px;
+    padding: 8px;
+  }
+
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  grid-template-areas:
+    'navi navi navi navi navi'
+    'section section section section aside'
+    'section section section section aside'
+    'article article article article aside'
+    'article article article article aside'
+    'article article article article aside'
+    'article article article article aside'
+    'article article article article aside'
+    'article article article article aside'
+    'footer footer footer footer footer ';
+
+  nav {
+    grid-area: navi;
+  }
+  section {
+    grid-area: section;
+  }
+  article {
+    grid-area: article;
+  }
+  aside {
+    grid-area: aside;
+  }
+  footer {
+    grid-area: footer;
+  }
+  section,
+  article,
+  aside {
+    background: linear-gradient(
+        to right,
+        rgba(192, 172, 112, 0.61),
+        rgba(172, 158, 158, 0) 70.71%
+      ),
+      linear-gradient(
+        127deg,
+        rgba(254, 255, 254, 0.8),
+        rgba(197, 165, 165, 0) 70.71%
+      ),
+      linear-gradient(
+        336deg,
+        rgba(194, 194, 212, 0.8),
+        rgba(176, 211, 205, 0.144) 70.71%
+      );
+  }
+}
