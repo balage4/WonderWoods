@@ -8,9 +8,14 @@ export default function Home() {
   return (
     <div className="grid-container">
       <Navigation />
+
+      <main>
+        <div className='main-left'>
       <Section />
       <Article />
-      <Aside />
+        </div>
+      </main>
+      <Aside className='main-right'/>
       <Footer />
     </div>
   );
