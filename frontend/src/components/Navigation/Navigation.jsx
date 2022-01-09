@@ -8,7 +8,7 @@ export default function Navigation() {
 
   return (
     <nav>
-      <p>Wonder Woods</p>
+      <p>LearningGround</p>
       <ul>
         {Object.keys(navmenu).map((item) => (
           <li key={`navitem_${item}`}>
